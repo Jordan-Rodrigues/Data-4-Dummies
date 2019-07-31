@@ -7,7 +7,6 @@ Data-4-Dummies is an easy-to-use, React-JS web interface that allows you to uplo
 * Basic Predictive Analysis (Based on user-selected features)
 * Basic Feature Engineering
 
-<br>
 #### Contributors:
 * Jordan Rodrigues
 * Jacob Lebowitz
