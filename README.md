@@ -10,4 +10,6 @@ Data-4-Dummies is an easy-to-use web interface that allows you to upload your da
 #### Contributors:
 * Jordan Rodrigues
 * Jacob Lebowitz
+* Michael Strohmeier
 * Tiger Gamble
+
