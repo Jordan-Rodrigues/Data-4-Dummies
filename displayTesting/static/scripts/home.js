@@ -20,8 +20,8 @@ $(".featureItem").click(async function () {
 
 $("input").click(async function () {
     await sleep(1000)
-    $(".submit").fadeIn(1000)
-    $(".submitImage").fadeIn(1000)
+    $(".submit").css("visibility", "visible")
+    $(".submitImage").css("visibility", "visible")
 })
 
 function scrollDirection() {
@@ -45,9 +45,17 @@ const animate = async (pos) => {
 
 function sec2Pos() {
     var featPos = $(".featTitle").offset().top
-    var headerHeight = $(".headerBar").height()
+    var headerHeight = $(".headerTitle").height()
     var topMargin = parseFloat($(".featTitle").css("margin-top"))
-    var sec2pos = featPos - headerHeight - topMargin
+    var sec2pos = featPos - headerHeight - topMargin * 1.05
+    return sec2pos
+}
+
+function sec21Pos() {
+    var featPos = $(".featTitle").offset().top
+    var headerHeight = $(".headerTitle").height()
+    var topMargin = parseFloat($(".featTitle").css("margin-top"))
+    var sec2pos = featPos - headerHeight - topMargin * 1.00
     return sec2pos
 }
 
@@ -63,20 +71,39 @@ var throttled = _.throttle(pageSwitch, 2100, {trailing: false})
 async function pageSwitch() {
     var direction = scrollDirection()
     var sec2pos = sec2Pos()
+    var sec21pos = sec21Pos()
     var sec3pos = sec3Pos()
     if ((window.pagePlace == 1) && (direction == "down")) {
+        $("#arrow1").fadeOut(1000)
         await animate(sec2pos)
         window.pagePlace = 2
     } else if ((window.pagePlace == 2) && (direction == "up")) {
+        $("#arrow1").fadeIn(1000)
         await animate(0)
         window.pagePlace = 1
     } else if ((window.pagePlace == 2) && (direction == "down")) {
+        $("#arrow2").fadeOut(1000)
         await animate(sec3pos)
         window.pagePlace = 3
     } else if ((window.pagePlace == 3) && (direction == "up")) {
-        await animate(sec2pos)
+        $("#arrow2").fadeIn(1000)
+        await animate(sec21pos)
         window.pagePlace = 2
     }
 }
 
 $(window).scroll(throttled)
+
+$("#arrow1").click(async function() {
+    $("#arrow1").fadeOut(1000)
+    await animate(sec2Pos())
+    window.pagePlace = 2
+}
+)
+
+$("#arrow2").click(async function() {
+    $("#arrow2").fadeOut(1000)
+    await animate(sec3Pos())
+    window.pagePlace = 3
+}
+)

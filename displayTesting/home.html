@@ -10,11 +10,15 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <script src="underscore.js"></script>
+    <script src="underscore.js"></script>
 </head>
 
 <body>
-    <h5 class="headerBar">Data For Dummies</h5>
+    <div class="headerBar">
+        <img class="pythonPic" src="Images/python.png">
+        <h5 class="headerTitle">Data For Dummies</h5>
+        <img class="pythonPic" src="Images/python.png">
+    </div>
     <div class="main">
         <section>
             <div class="greeting">
@@ -26,36 +30,45 @@
                     started!</p>
                 <p class="statement" style="margin-top:3%;">Sincerely,<br>
                     <h5 class="statement" style="margin-top:0%;">The Data Dummies Team</h5>
+                    <div id="arrow1" class="downArrow bounce">
+                        <img class="arrowPic" alt=""
+                            src="Images/arrow.png" />
+                    </div>
             </div>
-        </section>
-        <section>
-            <div class="features">
-                <h5 class="featTitle">Features</h5>
-                <div class="featureList">
-                    <h4 class="featureItem">Data<br>Insights</h4>
-                    <h4 class="featureItem">Data Preprocessing</h4>
-                    <h4 class="featureItem">Data Visualizations</h4>
-                    <h4 class="featureItem">Predictive Analytics</h4>
+    </div>
+    </section>
+    <section>
+        <div class="features">
+            <h5 class="featTitle">Features</h5>
+            <div class="featureList">
+                <h4 class="featureItem">Data<br>Insights</h4>
+                <h4 class="featureItem">Data Preprocessing</h4>
+                <h4 class="featureItem">Data Visualizations</h4>
+                <h4 class="featureItem">Predictive Analytics</h4>
+            </div>
+            <h5 class="featDesc">Click on any of the features about for more information!</h5>
+        </div>
+        <div class="downArrow bounce">
+                <img id="arrow2" class="arrowPic" alt=""
+                    src="Images/arrow.png" />
+            </div>
+    </section>
+    <section>
+        <div class="upload">
+            <h5 id="upTitle" class="featTitle">So... what are you waiting for?</h5>
+            <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" class="fileUpload" />
+                <div class="labelHolder">
+                    <label class="fileLabel" for="file">Choose a file</label>
+                    <img class="uploadImage" src="Images/upload.png">
                 </div>
-                <h5 class="featDesc">Click on any of the features about for more information!</h5>
-            </div>
-        </section>
-        <section>
-            <div class="upload">
-                <h5 id="upTitle" class="featTitle">So... what are you waiting for?</h5>
-                <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="file" class="fileUpload" />
-                    <div class="labelHolder">
-                        <label class="fileLabel" for="file">Choose a file</label>
-                        <img class="uploadImage" src="Images/upload.png">
-                    </div>
-                    <div class="submitHolder">
-                        <input class="submit" type="submit" />
-                        <img class="submitImage" src="Images/submit.png">
-                    </div>
-                </form>
-            </div>
-        </section>
+                <div class="submitHolder">
+                    <input class="submit" type="submit" />
+                    <img class="submitImage" src="Images/submit.png">
+                </div>
+            </form>
+        </div>
+    </section>
     </div>
 
     <script src="static/scripts/home.js" async defer></script>

@@ -36,7 +36,7 @@ label {
     text-align: center;
     color: white;
     font-family: 'Open Sans';
-    margin-top: 8%;
+    margin-top: 5%;
     font-size: 4vh;
 }
 
@@ -82,21 +82,30 @@ label {
 }
 
 .greeting {
-    margin-top: 15%;
+    margin-top: 12%;
 }
 
 .headerBar {
+    background-color: #16994f;
+    display: block;
     text-align: center;
-    color: white;
-    background-color: #16994F;
-    margin-top: 0;
-    font-size: 8vh;
-    font-family: 'Oswald';
-    letter-spacing: .2vh;
-    padding: 2% 0%;
     position: fixed;
     top: 0;
     width: 100%;
+    padding: 0.9vh 0%;
+}
+
+.headerTitle {
+    color: white;
+    font-size: 8vh;
+    font-family: 'Oswald';
+    letter-spacing: .2vh;
+    padding: 1% 0%;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .hello {
@@ -106,6 +115,7 @@ label {
     font-size: 6vh;
     letter-spacing: .2vh;
     margin-bottom: 0;
+    margin-top: 0%;
 }
 
 .intro {
@@ -123,6 +133,11 @@ label {
     justify-content: center;
 }
 
+.pythonPic {
+    height: 3%;
+    width: 3%;
+}
+
 .statement {
     font-family: "Open Sans";
     font-size: 3vh;
@@ -131,7 +146,7 @@ label {
 }
 
 .submit {
-    display: none;
+    visibility: hidden;
     font-size: 4vh;
     width: 28%;
     margin: 0;
@@ -143,10 +158,11 @@ label {
     display: flex;
     justify-content: center;
 }
+
 .submitImage {
     width: 2%;
     height: 2%;
-    display: none;
+    visibility: hidden;
     position: relative;
     right: 8%;
     top: 3.2vh;
@@ -159,4 +175,101 @@ label {
     position: relative;
     right: 7%;
     bottom: 6.8vh;
+}
+
+.downArrow {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.bounce {
+    -moz-animation: bounce 3s infinite;
+    -webkit-animation: bounce 3s infinite;
+    animation: bounce 3s infinite;
+}
+
+@-moz-keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -moz-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    60% {
+        -moz-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+@-webkit-keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    60% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    60% {
+        -moz-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+}
+
+.arrowPic {
+    height: 2%;
+    width: 2%;
+}
+
+#arrow1 {
+    cursor: pointer;
+}
+
+#arrow2 {
+    cursor: pointer;
 }
