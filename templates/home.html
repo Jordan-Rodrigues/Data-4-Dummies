@@ -10,36 +10,70 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="static/scripts/underscore.js"></script>
+    <link rel="icon" 
+    type="image/png" 
+    href="static/Images/dataFav.png">
 </head>
 
 <body>
-    <h5 class="headerBar">Data For Dummies</h5>
-    <div class="greeting">
-        <h5 class="hello">Hey There!</h5>
-        <p class="intro"> We get that Data Science is hard. Like <em>really</em> hard.<br>We're here to help you
-            preprocess, visualize, and analyze data. <br> All without a single line of code.</p>
-        <p class="statement">Just upload your data, and we'll take care of the rest for you.<br>Scroll down to get
-            started!</p>
-        <p class="statement" style="margin-top:3%;">Sincerely,<br>
-            <h5 class="statement" style="margin-top:0%;">The Data Dummies Team</h5>
+    <div class="headerBar">
+        <img class="pythonPic" src="static/Images/python.png">
+        <h5 class="headerTitle">Data For Dummies</h5>
+        <img class="pythonPic" src="static/Images/python.png">
     </div>
-    <div class="features">
-        <h5 class="featTitle">Features</h5>
-        <div class="featureList">
-            <h4 class="featureItem">Data<br>Insights</h5>
-                <h4 class="featureItem">Data Preprocessing</h5>
-                    <h4 class="featureItem">Data Visualizations</h5>
-                        <h4 class="featureItem">Predictive Analytics</h5>
+    <div class="main">
+        <section>
+            <div class="greeting">
+                <h5 class="hello">Hey There!</h5>
+                <p class="intro"> We get that Data Science is hard. Like <em>really</em> hard.<br>We're here to help you
+                    preprocess, visualize, and analyze data. <br> All without a single line of code.</p>
+                <p class="statement">Just upload your data, and we'll take care of the rest for you.<br>Scroll down to
+                    get
+                    started!</p>
+                <p class="statement" style="margin-top:3%;">Sincerely,<br>
+                    <h5 class="statement" style="margin-top:0%;">The Data Dummies Team</h5>
+                    <div id="arrow1" class="downArrow bounce">
+                        <img class="arrowPic" alt=""
+                            src="static/Images/arrow.png" />
+                    </div>
+            </div>
+    </div>
+    </section>
+    <section>
+        <div class="features">
+            <h5 class="featTitle">Features</h5>
+            <div class="featureList">
+                <h4 class="featureItem">Data<br>Insights</h4>
+                <h4 class="featureItem">Data Preprocessing</h4>
+                <h4 class="featureItem">Data Visualizations</h4>
+                <h4 class="featureItem">Predictive Analytics</h4>
+            </div>
+            <h5 class="featDesc">Click on any of the features about for more information!</h5>
         </div>
-        <h5 class="featDesc">Click on any of the features about for more information!</h5>
+        <div class="downArrow bounce">
+                <img id="arrow2" class="arrowPic" alt=""
+                    src="static/Images/arrow.png" />
+            </div>
+    </section>
+    <section>
+        <div class="upload">
+            <h5 id="upTitle" class="featTitle">So... what are you waiting for?</h5>
+            <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" class="fileUpload" />
+                <div class="labelHolder">
+                    <label class="fileLabel" for="file">Choose a file</label>
+                    <img class="uploadImage" src="static/Images/upload.png">
+                </div>
+                <div class="submitHolder">
+                    <input class="submit" type="submit" />
+                    <img class="submitImage" src="static/Images/submit.png">
+                </div>
+            </form>
+        </div>
+    </section>
     </div>
-    <div class="upload">
-        <h5 class="featTitle">So... what are you waiting for?</h5>
-    </div>
-    <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
-        <input class="fileUpload" type="file" name="file"/>
-        <input class="invisible" type="submit"/>
-    </form>
+
     <script src="static/scripts/home.js" async defer></script>
 </body>
 
