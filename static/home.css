@@ -5,6 +5,10 @@ body {
 
 .featDesc {
     text-align: center;
+    color: white;
+    font-family: 'Open Sans';
+    margin-top: 8%;
+    font-size: 4vh;
 }
 
 .featureItem {
@@ -19,6 +23,8 @@ body {
     width: 12%;
     padding: 8vh 2.3vh;
     border-radius: 100%;
+    cursor: pointer;
+    border: solid 0.5vh #16994F;
 }
 
 .featureList {
@@ -30,9 +36,10 @@ body {
 
 .featTitle {
     text-align: center;
-    font-family: 'Oswald';
+    font-family: 'Open Sans';
     color: white;
     font-size: 6vh;
+    margin-top: 8%;
 }
 
 .greeting {
@@ -70,6 +77,10 @@ body {
     width: 60%;
     margin: auto;
     margin-top: 4%;
+}
+
+.invisible {
+    display: none;
 }
 
 .statement {

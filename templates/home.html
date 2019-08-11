@@ -6,17 +6,10 @@
     <title>Data For Dummies</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="static/home.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <script>
-            $(function() {
-              $.scrollify({
-                section : ".greeting",
-              });
-            });
-          </script>
 </head>
 
 <body>
@@ -33,14 +26,21 @@
     <div class="features">
         <h5 class="featTitle">Features</h5>
         <div class="featureList">
-            <h5 class="featureItem">Data<br>Insights</h5>
-            <h5 class="featureItem">Data Preprocessing</h5>
-            <h5 class="featureItem">Data Visualizations</h5>
-            <h5 class="featureItem">Predictive Analytics</h5>
+            <h4 class="featureItem">Data<br>Insights</h5>
+                <h4 class="featureItem">Data Preprocessing</h5>
+                    <h4 class="featureItem">Data Visualizations</h5>
+                        <h4 class="featureItem">Predictive Analytics</h5>
         </div>
         <h5 class="featDesc">Click on any of the features about for more information!</h5>
     </div>
-    <script src="home.js" async defer></script>
+    <div class="upload">
+        <h5 class="featTitle">So... what are you waiting for?</h5>
+    </div>
+    <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+        <input class="fileUpload" type="file" name="file"/>
+        <input class="invisible" type="submit"/>
+    </form>
+    <script src="static/scripts/home.js" async defer></script>
 </body>
 
 </html>

@@ -1,0 +1,162 @@
+body {
+    background-color: #3D3C3C;
+    margin: 0;
+    margin-bottom: 12%;
+}
+
+input {
+    border: solid 0.5vh white;
+    color: white;
+    background-color: #16994F;
+    margin: auto;
+    display: block;
+    font-family: 'Open Sans';
+    font-size: 3vh;
+    padding: 1%;
+}
+
+label {
+    color: white;
+    display: inline-block;
+    background-color: #16994F;
+    font-family: 'Open Sans';
+    font-size: 4vh;
+    text-align: center;
+    margin: 0;
+    width: 28%;
+    padding: 1% 0%;
+    border: solid 0.5vh white;
+    position: relative;
+    left: 1%;
+    bottom: 10vh;
+    z-index: -2;
+}
+
+.featDesc {
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans';
+    margin-top: 8%;
+    font-size: 4vh;
+}
+
+.featureItem {
+    display: inline-block;
+    color: white;
+    font-size: 3vh;
+    background-color: #16994F;
+    text-align: center;
+    margin: 0% 3%;
+    font-family: "Open Sans";
+    height: 100%;
+    width: 12%;
+    padding: 8vh 2.3vh;
+    border-radius: 100%;
+    cursor: pointer;
+    border: solid 0.5vh #16994F;
+}
+
+.featureList {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.featTitle {
+    text-align: center;
+    font-family: 'Open Sans';
+    color: white;
+    font-size: 6vh;
+    margin-top: 8%;
+}
+
+.fileUpload {
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+    cursor: pointer;
+    width: 28%;
+    padding: 1% 0%;
+    height: 5vh;
+}
+
+.greeting {
+    margin-top: 15%;
+}
+
+.headerBar {
+    text-align: center;
+    color: white;
+    background-color: #16994F;
+    margin-top: 0;
+    font-size: 8vh;
+    font-family: 'Oswald';
+    letter-spacing: .2vh;
+    padding: 2% 0%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.hello {
+    text-align: center;
+    color: white;
+    font-family: 'Oswald';
+    font-size: 6vh;
+    letter-spacing: .2vh;
+    margin-bottom: 0;
+}
+
+.intro {
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 3vh;
+    width: 60%;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.labelHolder {
+    display: flex;
+    justify-content: center;
+}
+
+.statement {
+    font-family: "Open Sans";
+    font-size: 3vh;
+    color: white;
+    text-align: center;
+}
+
+.submit {
+    display: none;
+    font-size: 4vh;
+    width: 28%;
+    margin: 0;
+    position: relative;
+    left: 1%;
+}
+
+.submitHolder {
+    display: flex;
+    justify-content: center;
+}
+.submitImage {
+    width: 2%;
+    height: 2%;
+    display: none;
+    position: relative;
+    right: 8%;
+    top: 3.2vh;
+}
+
+
+.uploadImage {
+    width: 2%;
+    height: 2%;
+    position: relative;
+    right: 7%;
+    bottom: 6.8vh;
+}
