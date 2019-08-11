@@ -26,7 +26,6 @@ $("input").click(async function () {
 
 function scrollDirection() {
     var st = $(window).scrollTop();
-    console.log("st is " + st + "global is " + window.globalPos)
     if (st > window.globalPos) {
         return "down"
     } else {
@@ -41,7 +40,6 @@ const animate = async (pos) => {
     //problem, animate is called 6 consecutive times which causes issues?
     await sleep(2000)
     window.globalPos = $(window).scrollTop()
-    console.log("new pos is " + window.globalPos)
     return new Promise(resolve => setTimeout(resolve, 1))
 }
 
@@ -63,13 +61,9 @@ function sec3Pos() {
 var throttled = _.throttle(pageSwitch, 2100, {trailing: false})
 
 async function pageSwitch() {
-    console.log("function is called")
     var direction = scrollDirection()
-    console.log(direction)
-    //section definitions
     var sec2pos = sec2Pos()
     var sec3pos = sec3Pos()
-    console.log(sec2pos + " " + sec3pos)
     if ((window.pagePlace == 1) && (direction == "down")) {
         await animate(sec2pos)
         window.pagePlace = 2
