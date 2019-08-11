@@ -1,15 +1,5 @@
-//var globalPos = 0;
-
-$(document).ready(function() {
-	$('#fullpage').fullpage({
-		//options here
-		autoScrolling:true,
-		scrollHorizontally: true
-	});
-
-	//methods
-	$.fn.fullpage.setAllowScrolling(false);
-});
+var globalPos = 0
+var pagePlace = 1
 
 const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -28,42 +18,10 @@ $(".featureItem").click(async function () {
     $(this).css("color", "#16994F")
 })
 
-$("input").click(function () {
-    $(".submit").fadeIn()
-    $(".submitImage").fadeIn()
-})
-
-/*
-$(window).scroll(async function () {
-    var direction = scrollDirection()
-    console.log(direction)
-    //section definitions
-    var sec2pos = sec2Pos()
-    var sec3pos = sec3Pos()
-    if (($(window).scrollTop() <= 100) && (direction == "down")) {
-        animate(sec2pos)
-        await sleep(2000)
-        window.globalPos = $(window).scrollTop()
-    }
-    console.log((secRC(sec2pos, $(window).scrollTop()) && direction == "up"))
-    if (secRC(sec2pos, $(window).scrollTop()) && direction == "up") {
-        console.log("yeet")
-        animate(0)
-        await sleep(2000)
-        window.globalPos = $(window).scrollTop()
-    }
-
-    if (secRC(sec2pos, $(window).scrollTop()) && direction == "down") {
-        animate(sec3pos)
-        await sleep(2000)
-        window.globalPos = $(window).scrollTop()
-    }
-
-    if (secRC(sec3pos, $(window).scrollTop()) && direction == "up") {
-        animate(sec2pos)
-        await sleep(2000)
-        window.globalPos = $(window).scrollTop()
-    }
+$("input").click(async function () {
+    await sleep(1000)
+    $(".submit").fadeIn(1000)
+    $(".submitImage").fadeIn(1000)
 })
 
 function scrollDirection() {
@@ -76,27 +34,15 @@ function scrollDirection() {
     }
 };
 
-//checks to see if you're roughly where the second section is
-function secRC(secPos, currentPos) {
-    if (currentPos >= secPos * .9 && currentPos <= secPos * 1.1) {
-        return true
-    } else {
-        return false
-    }
-}
-
-
-function animate(pos) {
+const animate = async (pos) => {
     $('html, body').animate({
         scrollTop: pos
-    }, 1000)
-}
-
-/*
-const animate = (pos) => {
-    return new Promise(resolve => $('html, body').animate({
-        scrollTop: pos
-    }, 2000))
+    }, 1900)
+    //problem, animate is called 6 consecutive times which causes issues?
+    await sleep(2000)
+    window.globalPos = $(window).scrollTop()
+    console.log("new pos is " + window.globalPos)
+    return new Promise(resolve => setTimeout(resolve, 1))
 }
 
 function sec2Pos() {
@@ -108,9 +54,35 @@ function sec2Pos() {
 }
 
 function sec3Pos() {
-    var waitPos = $("#upTitle").offset.top
+    var waitPos = $("#upTitle").offset().top
     var headerHeight = $(".headerBar").height()
     var sec3pos = waitPos - headerHeight
     return sec3pos
 }
-*/ 
+
+var throttled = _.throttle(pageSwitch, 2100, {trailing: false})
+
+async function pageSwitch() {
+    console.log("function is called")
+    var direction = scrollDirection()
+    console.log(direction)
+    //section definitions
+    var sec2pos = sec2Pos()
+    var sec3pos = sec3Pos()
+    console.log(sec2pos + " " + sec3pos)
+    if ((window.pagePlace == 1) && (direction == "down")) {
+        await animate(sec2pos)
+        window.pagePlace = 2
+    } else if ((window.pagePlace == 2) && (direction == "up")) {
+        await animate(0)
+        window.pagePlace = 1
+    } else if ((window.pagePlace == 2) && (direction == "down")) {
+        await animate(sec3pos)
+        window.pagePlace = 3
+    } else if ((window.pagePlace == 3) && (direction == "up")) {
+        await animate(sec2pos)
+        window.pagePlace = 2
+    }
+}
+
+$(window).scroll(throttled)
