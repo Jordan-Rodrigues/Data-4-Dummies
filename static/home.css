@@ -1,13 +1,11 @@
 body {
-    background-color: #3D3C3C;
+    background-color: white;
     margin: 0;
     margin-bottom: 12%;
 }
 
 input {
     border: solid 0.5vh white;
-    color: white;
-    background-color: #16994F;
     margin: auto;
     display: block;
     font-family: 'Open Sans';
@@ -15,10 +13,15 @@ input {
     padding: 1%;
 }
 
+input:hover label{
+    color: #2B59C3;
+    background-color: white;
+}
+
 label {
     color: white;
     display: inline-block;
-    background-color: #16994F;
+    background-color: #2B59C3;
     font-family: 'Open Sans';
     font-size: 4vh;
     text-align: center;
@@ -32,19 +35,25 @@ label {
     z-index: -2;
 }
 
+
+
 .featDesc {
     text-align: center;
-    color: white;
+    color: #266DD3;
     font-family: 'Open Sans';
     margin-top: 5%;
     font-size: 4vh;
+}
+
+.features {
+    opacity: 0;
 }
 
 .featureItem {
     display: inline-block;
     color: white;
     font-size: 3vh;
-    background-color: #16994F;
+    background-color: #266DD3;
     text-align: center;
     margin: 0% 3%;
     font-family: "Open Sans";
@@ -53,7 +62,7 @@ label {
     padding: 8vh 2.3vh;
     border-radius: 100%;
     cursor: pointer;
-    border: solid 0.5vh #16994F;
+    border: solid 0.5vh white;
 }
 
 .featureList {
@@ -66,7 +75,7 @@ label {
 .featTitle {
     text-align: center;
     font-family: 'Open Sans';
-    color: white;
+    color: #266DD3;
     font-size: 6vh;
     margin-top: 8%;
 }
@@ -86,13 +95,14 @@ label {
 }
 
 .headerBar {
-    background-color: #16994f;
+    background-color: #0A369D;
     display: block;
     text-align: center;
     position: fixed;
     top: 0;
     width: 100%;
     padding: 0.9vh 0%;
+    z-index: 999;
 }
 
 .headerTitle {
@@ -110,7 +120,7 @@ label {
 
 .hello {
     text-align: center;
-    color: white;
+    color: #2B59C3;
     font-family: 'Oswald';
     font-size: 6vh;
     letter-spacing: .2vh;
@@ -120,7 +130,7 @@ label {
 
 .intro {
     text-align: center;
-    color: white;
+    color:#2B59C3;
     font-family: 'Open Sans';
     font-size: 3vh;
     width: 60%;
@@ -141,7 +151,7 @@ label {
 .statement {
     font-family: "Open Sans";
     font-size: 3vh;
-    color: white;
+    color: #2B59C3;
     text-align: center;
 }
 
@@ -152,6 +162,9 @@ label {
     margin: 0;
     position: relative;
     left: 1%;
+    background-color: #2B59C3;
+    color: white;
+    cursor: pointer;
 }
 
 .submitHolder {

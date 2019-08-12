@@ -6,16 +6,18 @@ const sleep = (milliseconds) => {
 }
 
 $(document).click(function () {
-    $(".featureItem").css("background-color", "#16994F")
+    $(".featureItem").css("background-color", "#266DD3")
     $(".featureItem").css("color", "white")
 })
 
 $(".featureItem").click(async function () {
     await sleep(1)
-    $(".featureItem").css("background-color", "#16994F")
+    $(".featureItem").css("background-color", "#266DD3")
     $(".featureItem").css("color", "white")
     $(this).css("background-color", "white")
-    $(this).css("color", "#16994F")
+    $(this).css("color", "#266DD3")
+    $(this).css("border", "solid 0.5vh #266DD3")
+    $(".featDesc").html($(this).attr("id"))
 })
 
 $("input").click(async function () {
@@ -33,7 +35,7 @@ function scrollDirection() {
     }
 };
 
-const animate = async (pos) => {
+const animate2 = async (pos) => {
     $('html, body').animate({
         scrollTop: pos
     }, 1900)
@@ -55,7 +57,7 @@ function sec21Pos() {
     var featPos = $(".featTitle").offset().top
     var headerHeight = $(".headerTitle").height()
     var topMargin = parseFloat($(".featTitle").css("margin-top"))
-    var sec2pos = featPos - headerHeight - topMargin * 1.00
+    var sec2pos = featPos - headerHeight - topMargin * .8
     return sec2pos
 }
 
@@ -75,19 +77,23 @@ async function pageSwitch() {
     var sec3pos = sec3Pos()
     if ((window.pagePlace == 1) && (direction == "down")) {
         $("#arrow1").fadeOut(1000)
-        await animate(sec2pos)
+        featureFade()
+        await animate2(sec2pos)
         window.pagePlace = 2
     } else if ((window.pagePlace == 2) && (direction == "up")) {
+        featureFade2()
         $("#arrow1").fadeIn(1000)
-        await animate(0)
+        await animate2(0)
         window.pagePlace = 1
     } else if ((window.pagePlace == 2) && (direction == "down")) {
+        featureFade2()
         $("#arrow2").fadeOut(1000)
-        await animate(sec3pos)
+        await animate2(sec3pos)
         window.pagePlace = 3
     } else if ((window.pagePlace == 3) && (direction == "up")) {
+        featureFade()
         $("#arrow2").fadeIn(1000)
-        await animate(sec21pos)
+        await animate2(sec21pos)
         window.pagePlace = 2
     }
 }
@@ -95,15 +101,29 @@ async function pageSwitch() {
 $(window).scroll(throttled)
 
 $("#arrow1").click(async function() {
+    featureFade()
     $("#arrow1").fadeOut(1000)
-    await animate(sec2Pos())
+    await animate2(sec2Pos())
     window.pagePlace = 2
 }
 )
 
 $("#arrow2").click(async function() {
+    featureFade2()
     $("#arrow2").fadeOut(1000)
-    await animate(sec3Pos())
+    await animate2(sec3Pos())
     window.pagePlace = 3
+
 }
 )
+function featureFade() {
+    $(".features").animate({
+        opacity: 1
+    }, 3500)
+}
+
+function featureFade2() {
+    $(".features").animate({
+        opacity: 0
+    }, 1000)
+}
