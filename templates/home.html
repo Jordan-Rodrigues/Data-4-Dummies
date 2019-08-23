@@ -59,8 +59,9 @@
     <section>
         <div class="upload">
             <h5 id="upTitle" class="featTitle">So... what are you waiting for?</h5>
+            <p class="upDesc">Upload a CSV or Excel file below!</p>
             <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
-                <input type="file" name="file" class="fileUpload" />
+                <input type="file" name="file" class="fileUpload" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
                 <div class="labelHolder">
                     <label class="fileLabel" for="file">Choose a file</label>
                     <img class="uploadImage" src="static/Images/upload.png">
@@ -70,6 +71,7 @@
                     <img class="submitImage" src="static/Images/submit.png">
                 </div>
             </form>
+            <p class="fileName"></p>
         </div>
     </section>
     </div>

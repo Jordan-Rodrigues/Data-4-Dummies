@@ -1,7 +1,7 @@
 body {
     background-color: white;
     margin: 0;
-    margin-bottom: 12%;
+    margin-bottom: 8%;
 }
 
 input {
@@ -78,6 +78,16 @@ label {
     color: #266DD3;
     font-size: 6vh;
     margin-top: 8%;
+    margin-bottom: 2%;
+}
+
+.fileName {
+    text-align: center;
+    color: #266DD3;
+    font-family: 'Open Sans';
+    font-size: 2.5vh;
+    position: relative;
+    margin-top: 0;
 }
 
 .fileUpload {
@@ -104,6 +114,16 @@ label {
     padding: 0.9vh 0%;
     z-index: 999;
 }
+
+.headerBar2 {
+    background-color: #0A369D;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 0.9vh 0%;
+    z-index: 999;
+}
+
 
 .headerTitle {
     color: white;
@@ -162,6 +182,7 @@ label {
     margin: 0;
     position: relative;
     left: 1%;
+    bottom: 5vh;
     background-color: #2B59C3;
     color: white;
     cursor: pointer;
@@ -178,9 +199,21 @@ label {
     visibility: hidden;
     position: relative;
     right: 8%;
-    top: 3.2vh;
+    bottom: 2.2vh;
 }
 
+.upDesc {
+    text-align: center;
+    color: #2B59C3;
+    font-family: 'Open Sans';
+    font-size: 3vh;
+    margin-bottom: 2%;
+
+}
+
+.upload {
+    opacity: 0;
+}
 
 .uploadImage {
     width: 2%;

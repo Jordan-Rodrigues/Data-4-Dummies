@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Data for Dummies</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="static/mainData.css">
+        <link rel="stylesheet" href="static/home.css">
+        <link rel="icon" 
+        type="image/png" 
+        href="static/Images/dataFav.png">
+    </head>
+    <body>
+        <div class="headerBar2">
+            <img class="pythonPic" src="static/Images/python.png">
+            <h5 class="headerTitle">Data For Dummies</h5>
+            <img class="pythonPic" src="static/Images/python.png">
+        </div>
+        <div class="leftHalf">
+        <h5 class="dataHead">{{ fileName }}</h5>
+        <div class="tableDiv">
+        {{dfhtml | safe}}
+        </div>
+        </div>
+        <div class="rightHalf">
+            <h5 class="insights">Key Insights:</h5>
+        </div>
+    </body>
+</html>

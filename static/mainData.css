@@ -1,0 +1,65 @@
+h5 {
+    color: #266DD3;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    empty-cells: hide;
+}
+
+th {
+    background-color: #0A369D;
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 3vh;
+    padding: 0% 1.5vh;
+}
+
+td {
+    font-family: 'Open Sans'
+}
+
+table, th, td {
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.dataHead {
+    color: #266DD3;
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 6.5vh;
+    letter-spacing: .2vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.insights {
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 4vh;
+}
+
+.leftHalf {
+    width: 74%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.rightHalf {
+    width: 25%;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+
+}
+
+.tableDiv {
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 2%;
+    max-height: 50vh;
+}
