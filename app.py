@@ -23,11 +23,12 @@ def upload_file():
 
       df_len = len(df.index)
       column_len = len(all_data.index)
-      count_of_nans = len(all_data['count_of_nans'].loc[all_data['count_of_nans'] == 0].index)
-
+      count_of_nans = len(all_data['count_of_nans'].loc[all_data['count_of_nans'] != 0].index)
+      columns_with_nans = all_data.loc[all_data['count_of_nans'] != 0]
+      
       return render_template("mainData.html", dfhtml=dfhtml,
       fileName = csvFile.filename, df_len=df_len, column_len=column_len,
-      count_of_nans=count_of_nans)
+      count_of_nans=count_of_nans, columns_with_nans=columns_with_nans)
 
 # All column info
 def get_dataframe_data(df):
