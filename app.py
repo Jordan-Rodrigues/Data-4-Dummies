@@ -15,13 +15,19 @@ def upload_file():
    if request.method == 'POST':
       csvFile = request.files['file']
       df = pd.read_csv(csvFile)
+
       dfhead = df.head(7)
       dfhtml = dfhead.to_html()
-      df_len = len(df.index)
+
       all_data, df_len = get_dataframe_data(df)
+
+      df_len = len(df.index)
       column_len = len(all_data.index)
+      count_of_nans = len(all_data['count_of_nans'].loc[all_data['count_of_nans'] == 0].index)
+
       return render_template("mainData.html", dfhtml=dfhtml,
-      fileName = csvFile.filename, df_len=df_len, column_len=column_len)
+      fileName = csvFile.filename, df_len=df_len, column_len=column_len,
+      count_of_nans=count_of_nans)
 
 # All column info
 def get_dataframe_data(df):
