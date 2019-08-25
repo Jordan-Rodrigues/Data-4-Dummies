@@ -8,8 +8,8 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="static/mainData.css">
         <link rel="stylesheet" href="static/home.css">
-        <link rel="icon" 
-        type="image/png" 
+        <link rel="icon"
+        type="image/png"
         href="static/Images/dataFav.png">
     </head>
     <body>
@@ -26,6 +26,10 @@
         </div>
         <div class="rightHalf">
             <h5 class="insights">Key Insights:</h5>
+            <p> Lenght of DataFrame: {{ df_len }} <p>
+            <p> Number of columns: {{ column_len }} <p>
+            <p> Number of columns with missing values: {{ count_of_nans }} <p>
+
         </div>
     </body>
 </html>
