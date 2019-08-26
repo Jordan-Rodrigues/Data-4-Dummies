@@ -25,11 +25,24 @@ table, th, td {
     text-align: center;
 }
 
+ul {
+    text-align: center;
+}
+ul li {
+    padding: 0.5vh;
+}
+
+.bullets {
+    font-family: 'Open Sans';
+    color: #266DD3;
+    font-size: 3vh;
+}
+
 .dataHead {
     color: #266DD3;
     font-family: 'Oswald';
     text-align: center;
-    font-size: 6.5vh;
+    font-size: 5vh;
     letter-spacing: .2vh;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -38,17 +51,19 @@ table, th, td {
 .insights {
     text-align: center;
     font-family: 'Oswald';
-    font-size: 4vh;
+    font-size: 5vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .leftHalf {
-    width: 74%;
+    width: 65%;
     display: inline-block;
     overflow: hidden;
 }
 
 .rightHalf {
-    width: 25%;
+    width: 34%;
     display: inline-block;
     overflow: hidden;
     vertical-align: top;
