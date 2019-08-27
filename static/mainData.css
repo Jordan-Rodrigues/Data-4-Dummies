@@ -1,5 +1,14 @@
+button {
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+}
 h5 {
     color: #266DD3;
+}
+
+input {
+    padding: 5% 5%;
 }
 
 table {
@@ -17,7 +26,8 @@ th {
 }
 
 td {
-    font-family: 'Open Sans'
+    font-family: 'Open Sans';
+    font-size: 2vh;
 }
 
 table, th, td {
@@ -25,11 +35,24 @@ table, th, td {
     text-align: center;
 }
 
+ul {
+    text-align: center;
+}
+ul li {
+    padding: 0.5vh;
+}
+
+.bullets {
+    font-family: 'Open Sans';
+    color: #266DD3;
+    font-size: 3vh;
+}
+
 .dataHead {
     color: #266DD3;
     font-family: 'Oswald';
     text-align: center;
-    font-size: 6.5vh;
+    font-size: 5vh;
     letter-spacing: .2vh;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -38,17 +61,43 @@ table, th, td {
 .insights {
     text-align: center;
     font-family: 'Oswald';
-    font-size: 4vh;
+    font-size: 5vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .leftHalf {
-    width: 74%;
+    width: 65%;
     display: inline-block;
     overflow: hidden;
 }
 
+.pageBar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.pageDesc {
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 4vh;
+    margin-top: 3vh;
+}
+
+.pageOption {
+    font-size: 3vh;
+    font-family: 'Open Sans';
+    color: white;
+    background-color: #0A369D;
+    border: 3px solid #0A369D;
+    cursor: pointer;
+}
+
 .rightHalf {
-    width: 25%;
+    width: 34%;
     display: inline-block;
     overflow: hidden;
     vertical-align: top;

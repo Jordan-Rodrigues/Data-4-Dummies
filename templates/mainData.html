@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Data for Dummies</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="static/mainData.css">
-        <link rel="stylesheet" href="static/home.css">
-        <link rel="icon"
-        type="image/png"
-        href="static/Images/dataFav.png">
-    </head>
-    <body>
-        <div class="headerBar2">
-            <img class="pythonPic" src="static/Images/python.png">
-            <h5 class="headerTitle">Data For Dummies</h5>
-            <img class="pythonPic" src="static/Images/python.png">
-        </div>
-        <div class="leftHalf">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Data for Dummies</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/mainData.css">
+    <link rel="stylesheet" href="static/home.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="static/Images/dataFav.png">
+</head>
+
+<body>
+    <div class="headerBar2">
+        <img class="pythonPic2" src="static/Images/python.png">
+        <h5 class="headerTitle2">Data For Dummies</h5>
+        <img class="pythonPic2" src="static/Images/python.png">
+    </div>
+    <div class="leftHalf">
         <h5 class="dataHead">{{ fileName }}</h5>
         <div class="tableDiv">
-        {{dfhtml | safe}}
+            {{dfhtml | safe}}
         </div>
+<<<<<<< HEAD
+    </div>
+    <div class="rightHalf">
+        <h5 class="insights">Key Insights :</h5>
+        <ul class="bullets">
+            <li class="bullet"> Length of DataFrame: {{ df_len }}</li>
+            <li class="bullet"> Number of Columns: {{ column_len }}</li>
+            <li class="bullet"> Number of Incomplete Columns: {{ count_of_nans }} </li>
+        </ul>
+=======
         </div>
         <div class="rightHalf">
             <h5 class="insights">Key Insights:</h5>
@@ -33,7 +45,30 @@
             {% for column in columns_with_nans['count_of_nans'].index %}
             <p> {{ column }}<p
             {% endfor %}
+>>>>>>> 049243719e2da4f9c77e42a6a77879a97f873d38
 
-        </div>
-    </body>
+    </div>
+    <div class="pageBar">
+    <form>
+        <button id="Combine CSV's to Increase the Size of your Data Source" class="pageOption" type="submit">Merge Data</button>
+    </form>
+    <form>
+        <button id="Filter out Unnecessary Data Based on Logical Rules" class="pageOption" type="submit">Filter Data</button>
+    </form>
+    <form>
+        <button id="Impute, Preprocess, or Edit Particular Pieces of Data" class="pageOption" type="submit">Alter Data</button>
+    </form>
+    <form>
+        <button id="Get High-Level Insights of the Dataset as a Whole (or specific columns)"" class="pageOption" type="submit">Analyze Data</button>
+    </form>
+    <form>
+        <button id="Run Basic Predictive Analytics on the Dataset (Highly Experimental!)" class="pageOption" type="submit">Predict Data</button>
+    </form>
+</div>
+<h5 class="pageDesc"></h5>
+<form>
+    <button class="ExportData" type="submit">Export Data</button>
+</form>
+<script src="static/scripts/mainData.js"></script>
+</body>
 </html>
