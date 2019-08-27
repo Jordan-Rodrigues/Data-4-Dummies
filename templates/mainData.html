@@ -25,28 +25,17 @@
         <div class="tableDiv">
             {{dfhtml | safe}}
         </div>
-<<<<<<< HEAD
     </div>
     <div class="rightHalf">
         <h5 class="insights">Key Insights :</h5>
         <ul class="bullets">
-            <li class="bullet"> Length of DataFrame: {{ df_len }}</li>
-            <li class="bullet"> Number of Columns: {{ column_len }}</li>
-            <li class="bullet"> Number of Incomplete Columns: {{ count_of_nans }} </li>
-        </ul>
-=======
-        </div>
-        <div class="rightHalf">
-            <h5 class="insights">Key Insights:</h5>
-            <p> {{ '{0:,}'.format(df_len | int) }} total rows<p>
-            <p> {{ column_len }} columns<p>
-            <p> {{ count_of_nans }} columns with missing values:<p>
-
-            {% for column in columns_with_nans['count_of_nans'].index %}
-            <p> {{ column }}<p
+            <li class="bullet"> Number of Rows: <b><em>{{ '{0:,}'.format(df_len | int) }}</em></b></li>
+            <li class="bullet"> Number of Columns: <b><em>{{ column_len }}</em></b></li>
+            <li class="bullet"> Number of Incomplete Columns: <b><em>{{ count_of_nans }}</em></b> </li>
+            {% for index, val in columns_with_nans.iteritems() %}
+            <li class="bullet"> <b>{{ index }}</b> is missing <b><em>{{ val | round(2) }}%</em></b> of data</li>
             {% endfor %}
->>>>>>> 049243719e2da4f9c77e42a6a77879a97f873d38
-
+        </ul>
     </div>
     <div class="pageBar">
     <form>
