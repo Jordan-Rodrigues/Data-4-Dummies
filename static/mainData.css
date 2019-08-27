@@ -1,5 +1,14 @@
+button {
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+}
 h5 {
     color: #266DD3;
+}
+
+input {
+    padding: 5% 5%;
 }
 
 table {
@@ -17,7 +26,8 @@ th {
 }
 
 td {
-    font-family: 'Open Sans'
+    font-family: 'Open Sans';
+    font-size: 2vh;
 }
 
 table, th, td {
@@ -60,6 +70,30 @@ ul li {
     width: 65%;
     display: inline-block;
     overflow: hidden;
+}
+
+.pageBar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.pageDesc {
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 4vh;
+    margin-top: 3vh;
+}
+
+.pageOption {
+    font-size: 3vh;
+    font-family: 'Open Sans';
+    color: white;
+    background-color: #0A369D;
+    border: 3px solid #0A369D;
+    cursor: pointer;
 }
 
 .rightHalf {
