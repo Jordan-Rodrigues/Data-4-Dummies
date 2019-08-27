@@ -23,7 +23,7 @@ def upload_file():
 
       column_len = len(all_data.index)
       count_of_nans = len(all_data['count_of_nans'].loc[all_data['count_of_nans'] != 0].index)
-      columns_with_nans = all_data.loc[all_data['count_of_nans'] != 0]
+      columns_with_nans = all_data['percent_missing'].loc[all_data['percent_missing'] >= 10]
 
       return render_template("mainData.html", dfhtml=dfhtml,
       fileName = csvFile.filename, df_len=df_len, column_len=column_len,
@@ -31,6 +31,8 @@ def upload_file():
 
 # All column info
 def get_dataframe_data(df):
+    df_len = len(df.index)
+
     # Create Dataframe on all column info
     all_data = pd.DataFrame(
     {'columns': df.columns,
@@ -41,6 +43,8 @@ def get_dataframe_data(df):
     # Booleon if column has NaN's
     all_data['no_nans'] = all_data['count_of_nans'].map(lambda x: x > 0)
 
-    df_len = len(df.index)
+    all_data['percent_missing'] = (all_data['count_of_nans'] / df_len) * 100
+    all_data.sort_values(by='percent_missing', ascending=False, inplace=True)
+
 
     return all_data, df_len
