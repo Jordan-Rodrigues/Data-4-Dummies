@@ -25,6 +25,7 @@
         <div class="tableDiv">
             {{dfhtml | safe}}
         </div>
+<<<<<<< HEAD
     </div>
     <div class="rightHalf">
         <h5 class="insights">Key Insights :</h5>
@@ -33,6 +34,18 @@
             <li class="bullet"> Number of Columns: {{ column_len }}</li>
             <li class="bullet"> Number of Incomplete Columns: {{ count_of_nans }} </li>
         </ul>
+=======
+        </div>
+        <div class="rightHalf">
+            <h5 class="insights">Key Insights:</h5>
+            <p> {{ '{0:,}'.format(df_len | int) }} total rows<p>
+            <p> {{ column_len }} columns<p>
+            <p> {{ count_of_nans }} columns with missing values:<p>
+
+            {% for column in columns_with_nans['count_of_nans'].index %}
+            <p> {{ column }}<p
+            {% endfor %}
+>>>>>>> 049243719e2da4f9c77e42a6a77879a97f873d38
 
     </div>
     <div class="pageBar">
