@@ -4,6 +4,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 app = Flask(__name__)
+# Change the first number to change the size of file allowed in MBs
+app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
 
 @app.route('/')
 @app.route('/home')
@@ -48,3 +50,7 @@ def get_dataframe_data(df):
 
 
     return all_data, df_len
+
+@app.errorhandler(413)
+def page_not_found(e):
+    return render_template("413.html")
