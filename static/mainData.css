@@ -3,8 +3,18 @@ button {
     padding-left: 3vh;
     padding-right: 3vh;
 }
+
+h4 {
+    color: #266DD3;
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 8vh;
+    letter-spacing: 0.2vh;
+}
+
 h5 {
     color: #266DD3;
+    text-align: center;
 }
 
 input {
@@ -58,6 +68,20 @@ ul li {
     margin-bottom: 2%;
 }
 
+.exportData {
+    border-radius: 100%;
+    border: solid 3px #0A369D;
+    font-size: 5vh;
+    padding: 3% 0%;
+    width: 20%;
+    background-color: white;
+    color:#0A369D;
+    margin: auto;
+    display: block;
+    font-family: "Oswald";
+    letter-spacing: 0.1vh;
+}
+
 .insights {
     text-align: center;
     font-family: 'Oswald';
@@ -83,8 +107,10 @@ ul li {
 .pageDesc {
     text-align: center;
     font-family: 'Open Sans';
-    font-size: 4vh;
-    margin-top: 3vh;
+    font-size: 3vh;
+    margin-top: 2.5vh;
+    visibility: hidden;
+    margin-bottom: 0vh;
 }
 
 .pageOption {

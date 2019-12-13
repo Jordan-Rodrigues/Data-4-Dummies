@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="static/mainData.css">
     <link rel="stylesheet" href="static/home.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="static/Images/dataFav.png">
 </head>
 
@@ -25,7 +25,6 @@
         <div class="tableDiv">
             {{dfhtml | safe}}
         </div>
-<<<<<<< HEAD
     </div>
     <div class="rightHalf">
         <h5 class="insights">Key Insights :</h5>
@@ -34,41 +33,46 @@
             <li class="bullet"> Number of Columns: {{ column_len }}</li>
             <li class="bullet"> Number of Incomplete Columns: {{ count_of_nans }} </li>
         </ul>
-=======
-        </div>
-        <div class="rightHalf">
-            <h5 class="insights">Key Insights:</h5>
-            <p> {{ '{0:,}'.format(df_len | int) }} total rows<p>
-            <p> {{ column_len }} columns<p>
-            <p> {{ count_of_nans }} columns with missing values:<p>
-
-            {% for column in columns_with_nans['count_of_nans'].index %}
-            <p> {{ column }}<p
-            {% endfor %}
->>>>>>> 049243719e2da4f9c77e42a6a77879a97f873d38
-
+    </div>
     </div>
     <div class="pageBar">
-    <form>
-        <button id="Combine CSV's to Increase the Size of your Data Source" class="pageOption" type="submit">Merge Data</button>
-    </form>
-    <form>
-        <button id="Filter out Unnecessary Data Based on Logical Rules" class="pageOption" type="submit">Filter Data</button>
-    </form>
-    <form>
-        <button id="Impute, Preprocess, or Edit Particular Pieces of Data" class="pageOption" type="submit">Alter Data</button>
-    </form>
-    <form>
-        <button id="Get High-Level Insights of the Dataset as a Whole (or specific columns)"" class="pageOption" type="submit">Analyze Data</button>
-    </form>
-    <form>
-        <button id="Run Basic Predictive Analytics on the Dataset (Highly Experimental!)" class="pageOption" type="submit">Predict Data</button>
-    </form>
-</div>
-<h5 class="pageDesc"></h5>
-<form>
-    <button class="ExportData" type="submit">Export Data</button>
-</form>
-<script src="static/scripts/mainData.js"></script>
+        <form>
+            <button id="Combine CSV's to Increase the Size of your Data Source" class="pageOption" type="submit">Merge
+                Data</button>
+        </form>
+        <form>
+            <button id="Filter out Unnecessary Data Based on Logical Rules" class="pageOption" type="submit">Filter
+                Data</button>
+        </form>
+        <form>
+            <button id="Impute, Preprocess, or Edit Particular Pieces of Data" class="pageOption" type="submit">Alter
+                Data</button>
+        </form>
+        <form>
+            <button id="Get High-Level Insights of the Dataset as a Whole (or specific columns)"" class=" pageOption"
+                type="submit">Analyze Data</button>
+        </form>
+        <form>
+            <button id="Run Basic Predictive Analytics on the Dataset (Highly Experimental!)" class="pageOption"
+                type="submit">Predict Data</button>
+        </form>
+    </div>
+    <h5 class="pageDesc">A</h5>
+    <div class="downArrow bounce">
+        <img id="arrow2" class="arrowPic" alt="" src="static/Images/arrow.png" />
+    </div>
+
+    <div class="exportSection">
+        <h4 class="exportMessage">Ready to Export?</h4>
+        <h5 class="exportMessage2">Click the button below to download your preprocessed data!</h5>
+        <form>
+            <button class="exportData" type="submit">Export<br>Data</button>
+        </form>
+        <h5 class="exportMessage3">If you'd like to make a few more changes, just scroll back up <br> and come back here
+            when you're ready to export!</h5>
+    </div>
+
+    <script src="static/scripts/mainData.js"></script>
 </body>
+
 </html>
